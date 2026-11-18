@@ -1,5 +1,7 @@
 # Antigravity Proxy Panel
 
+**English** · [简体中文](README.zh-CN.md)
+
 A VS Code extension that gives **Google Antigravity** a dedicated proxy — without touching VS Code's global proxy settings.
 
 It installs a tiny webview panel inside the Antigravity sidebar, manages your own proxy/VLESS subscription and xray process, and patches the official Antigravity extension so its `agy` backend routes all traffic through that proxy.
