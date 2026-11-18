@@ -1,0 +1,95 @@
+{
+  "name": "antigravity-proxy-panel",
+  "displayName": "Antigravity Proxy Panel",
+  "description": "Proxy node selector for Google Antigravity. Manages xray lifecycle, patches Antigravity to use a dedicated proxy, all in one panel.",
+  "version": "0.1.0",
+  "publisher": "hackerqwert",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./extension.js",
+  "extensionDependencies": [
+    "Google.google-antigravity"
+  ],
+  "contributes": {
+    "configuration": {
+      "title": "Antigravity Proxy",
+      "properties": {
+        "antigravityProxy.url": {
+          "type": "string",
+          "default": "",
+          "description": "Internal: auto-set local proxy URL injected into Antigravity.",
+          "scope": "machine"
+        },
+        "antigravityProxy.subscriptionUrl": {
+          "type": "string",
+          "default": "",
+          "description": "Subscription URL (3x-ui / v2board / generic base64 share-link list).",
+          "scope": "machine"
+        },
+        "antigravityProxy.selectedNodeName": {
+          "type": "string",
+          "default": "",
+          "description": "Internal: name of currently selected node.",
+          "scope": "machine"
+        }
+      }
+    },
+    "views": {
+      "antigravity-sidebar": [
+        {
+          "type": "webview",
+          "id": "antigravityProxy.panel",
+          "name": "Proxy",
+          "icon": "resources/icon.svg",
+          "contextualTitle": "Proxy"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "antigravityProxy.refresh",
+        "title": "Antigravity Proxy: Refresh Subscription"
+      },
+      {
+        "command": "antigravityProxy.start",
+        "title": "Antigravity Proxy: Start"
+      },
+      {
+        "command": "antigravityProxy.stop",
+        "title": "Antigravity Proxy: Stop"
+      },
+      {
+        "command": "antigravityProxy.applyPatch",
+        "title": "Antigravity Proxy: Patch Antigravity"
+      },
+      {
+        "command": "antigravityProxy.removePatch",
+        "title": "Antigravity Proxy: Remove Patch"
+      }
+    ]
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HackerQWERT/antigravity-proxy-panel.git"
+  },
+  "homepage": "https://github.com/HackerQWERT/antigravity-proxy-panel#readme",
+  "bugs": {
+    "url": "https://github.com/HackerQWERT/antigravity-proxy-panel/issues"
+  },
+  "keywords": [
+    "antigravity",
+    "proxy",
+    "xray",
+    "vless",
+    "reality",
+    "gemini"
+  ]
+}
