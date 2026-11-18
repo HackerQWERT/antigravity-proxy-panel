@@ -25,7 +25,7 @@ jobs:
         run: npm install -g @vscode/vsce
 
       - name: Package extension
-        run: vsce package --out antigravity-proxy-panel.vsix
+        run: vsce package --allow-star-activation --allow-missing-repository --out antigravity-proxy-panel.vsix
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
